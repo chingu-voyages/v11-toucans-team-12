@@ -5,10 +5,16 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 nav {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  opacity: 0;
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background: #ffa9a3; }
+  background: #ffa9a3;
+  transition: 300ms; }
   nav #brand {
     text-transform: uppercase;
     font-size: 2em;
@@ -44,5 +50,9 @@ nav {
     nav ul #resume-link:hover {
       background: #7e6c6c;
       color: white; }
+
+nav.shown {
+  top: 0;
+  opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */

@@ -18,10 +18,16 @@ body {
 // Navbar
 
 nav {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  opacity: 0;
   display: flex;
   justify-content: space-between;
   padding: 20px;
   background: $melon;
+  transition: 300ms;
 
   #brand {
     text-transform: uppercase;
@@ -73,4 +79,9 @@ nav {
       color: white;
     }
   }
+}
+
+nav.shown {
+  top: 0;
+  opacity: 1;
 }
