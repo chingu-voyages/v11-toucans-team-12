@@ -1,0 +1,22 @@
+{
+  "name": "v11-toucans-team-12",
+  "version": "1.0.0",
+  "description": "Add-project-description-here | Voyage-11 | https://chingu.io/ | https://twitter.com/ChinguCollabs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/v11-toucans-team-12.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/v11-toucans-team-12/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/v11-toucans-team-12#readme",
+  "dependencies": {
+    "sass": "^1.22.12"
+  }
+}
