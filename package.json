@@ -18,5 +18,6 @@
   "homepage": "https://github.com/chingu-voyages/v11-toucans-team-12#readme",
   "dependencies": {
     "sass": "^1.22.12"
-  }
+  },
+  "devDependencies": {}
 }
