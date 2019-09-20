@@ -4,37 +4,109 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="dist/stylesheets/style.css">
   <link rel="stylesheet" href="dist/stylesheets/reset.css">
+  <link rel="stylesheet" href="dist/stylesheets/style.css">
+
   <title>My Resume</title>
 </head>
 
 <body>
+
+  <nav>
+    <h1>My Portfolio</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#work">Work Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <!-- Work Experience & Education ULLA DOES-->
   <section class="experience-section">
-    <div class="">
-      <h1 class=>Work Experience & Education</h1>
+    <div class="resume-header">
+      <h1 class="">Work Experience & Education</h1>
     </div>
-    <div class="">
+    <div class="container" id="work">
       <h3>Work Experience</h3>
       <h5>Front End Developer / Firm Inc.</h5>
       <h6>Jan 2018 - Current</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <hr>
       <h5>Intern / Company Inc.</h5>
       <h6>Jul 2017 - Dec 2017</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. </p>
     </div>
-    <div class="">
-      <h3>Education</h3>
-      <h5>M.Sc., University of Education, New York</h5>
-      <h6>2013 - 2016</h6>
-      <h5>B.Sc., College of Students, London </h5>
-      <h6>2010 - 2013</h6>
+
+    <div class="container" id="education">
+      <!-- 
+        Possibility to add image 
+       -->
+      <!--       <img src="images/study.jpg" alt=""> -->
+      <div>
+        <h3>Education</h3>
+        <h5>University of Education, New York</h5>
+        <h6>2013 - 2016</h6>
+        <p>M.Sc., Computer Science</p>
+        <hr>
+        <h5>College of Students, London </h5>
+        <h6>2010 - 2013</h6>
+        <p>B.Sc., Psychology</p>
+      </div>
+
+    </div>
+    <div id="skills">
+      <h3>Skills</h3>
+      <div>
+        <p>UX/UI Design</p>
+        <div style="width:100%;">
+          100%
+        </div>
+      </div>
+      <div class="">
+        <p>Vanilla JS</p>
+        <div style="width:80%;">
+          80%
+        </div>
+      </div>
+      <div class="">
+        <p>HTML & CSS</p>
+        <div style="width:85%;">
+          85%
+        </div>
+      </div>
+      <h3>Languages</h3>
+      <div>
+        <p>English</p>
+        <div style="width:100%;">
+          100%
+        </div>
+      </div>
+
+      <div class="">
+        <p>Spanish</p>
+        <div style="width:80%;">
+          80%
+        </div>
+      </div>
+      <div class="">
+        <p>Tagalog</p>
+        <div style="width:50%;">
+          50%
+        </div>
+
+      </div>
     </div>
   </section>
+
+  <script src="./src/index.js"></script>
 </body>
 
 </html>
