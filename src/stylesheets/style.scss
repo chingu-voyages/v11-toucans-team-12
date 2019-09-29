@@ -7,6 +7,21 @@ $light-melon: #ffd5d2;
 $uranian-blue: #b9e6ff;
 $cornflower-blue: #5c95ff;
 
+@mixin parallax-header($img-src) {
+  background-image: $img-src;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px #333;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -40,7 +55,7 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     font-size: 1.2em;
-    
+
     li {
       position: relative;
       margin: 0 3px;
@@ -84,4 +99,81 @@ nav {
 nav.shown {
   top: 0;
   opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  padding: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+h5,
+h6 {
+  margin: 1rem 0;
+}
+
+hr {
+  border: 0.5px solid #eee;
+  margin: 20px auto;
+  width: 50%;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto 20px;
+}
+
+.experience-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "work work work skills"
+    "education education education skills";
+}
+
+.resume-header {
+  @include parallax-header(url("/images/resume.png"));
+  grid-area: header;
+}
+
+#work {
+  grid-area: work;
+}
+
+#education {
+  grid-area: education;
+
+  // Include if image added
+  /*   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-start;
+
+  img {
+    justify-self: center;
+    align-self: flex-end;
+    width: 30%;
+    height: auto;
+  }
+
+  div {
+    width: 50%;
+  } */
+}
+
+#skills {
+  grid-area: skills;
+  line-height: 2;
+  width: 90%;
+
+  div {
+    div {
+      background-color: $light-coral;
+      margin-bottom: 1rem;
+    }
+  }
 }
