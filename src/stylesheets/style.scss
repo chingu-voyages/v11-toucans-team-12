@@ -7,7 +7,7 @@ $light-melon: #ffd5d2;
 $uranian-blue: #b9e6ff;
 $cornflower-blue: #5c95ff;
 
-@mixin parallax-header($img-src) {
+@mixin parallax-header($img-src, $img-src-big) {
   background-image: $img-src;
   background-attachment: fixed;
   background-position: center;
@@ -20,6 +20,10 @@ $cornflower-blue: #5c95ff;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+
+  @media only screen and (min-width: 992px) {
+    background-image: $img-src-big;
+  }
 }
 
 html {
@@ -27,7 +31,7 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 // Navbar
@@ -125,18 +129,34 @@ hr {
   margin: 0 auto 20px;
 }
 
-.experience-section {
+/* Resume page */
+
+.experience-section .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
   grid-template-areas:
-    "header header header header"
-    "work work work skills"
-    "education education education skills";
+    "header"
+    "skills"
+    "work"
+    "education";
+}
+
+@media only screen and (min-width: 768px) {
+  .experience-section .container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header header"
+      "skills work"
+      "skills education";
+  }
 }
 
 .resume-header {
-  @include parallax-header(url("/images/resume.png"));
+  @include parallax-header(
+    url("../../images/resume 1100w.jpg"),
+    url("../../images/resume max.jpg")
+  );
   grid-area: header;
 }
 
@@ -168,8 +188,6 @@ hr {
 #skills {
   grid-area: skills;
   line-height: 2;
-  width: 90%;
-
   div {
     div {
       background-color: $light-coral;

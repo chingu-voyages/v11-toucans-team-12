@@ -91,15 +91,22 @@ hr {
   margin: 0 auto 20px;
 }
 
-.experience-section {
+/* Resume page */
+.experience-section .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "header header header header" "work work work skills" "education education education skills";
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+  grid-template-areas: "header" "skills" "work" "education";
 }
 
+@media only screen and (min-width: 768px) {
+  .experience-section .container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "header header" "skills work" "skills education";
+  }
+}
 .resume-header {
-  background-image: url("/images/resume.png");
+  background-image: url("../../images/resume 1100w.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -112,6 +119,11 @@ hr {
   justify-content: center;
   margin-bottom: 40px;
   grid-area: header;
+}
+@media only screen and (min-width: 992px) {
+  .resume-header {
+    background-image: url("../../images/resume max.jpg");
+  }
 }
 
 #work {
@@ -140,7 +152,6 @@ hr {
 #skills {
   grid-area: skills;
   line-height: 2;
-  width: 90%;
 }
 #skills div div {
   background-color: #f87575;
