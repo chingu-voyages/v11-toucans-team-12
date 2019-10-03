@@ -17,6 +17,7 @@ nav {
   padding: 20px;
   background: #ffa9a3;
   transition: 300ms;
+  z-index: 10;
 }
 nav #brand {
   text-transform: uppercase;
@@ -91,6 +92,145 @@ hr {
   margin: 0 auto 20px;
 }
 
+/* Testimonials Section */
+#testimonials {
+  background-color: #b9e6ff;
+  padding-bottom: 20px;
+}
+
+.testimonial-header {
+  background-image: url("../../images/testimonials 1100w.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px #333;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 992px) {
+  .testimonial-header {
+    background-image: url("../../images/testimonials max.jpg");
+  }
+}
+
+/*! Carousel starts ---- How To by W3Schools:  https://www.w3schools.com/howto/howto_js_slideshow.asp */
+.testimonial-carousel {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.testimonial-img {
+  border-radius: 100%;
+  height: auto;
+  width: 25%;
+  display: block;
+  margin: 20px auto auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 3% 15%;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 1px #333;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*! Carousel ends
+
 /* Resume page */
 .experience-section .container {
   display: grid;
@@ -156,6 +296,7 @@ hr {
 #skills div div {
   background-color: #f87575;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
