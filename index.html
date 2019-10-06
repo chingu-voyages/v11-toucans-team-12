@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="dist/stylesheets/reset.css">
   <link rel="stylesheet" href="dist/stylesheets/style.css">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/65ac835d05.js" crossorigin="anonymous"></script>
   <title>My Portfolio</title>
 </head>
 
@@ -131,26 +134,30 @@
 
     <!-- Contact ULLA DOES-->
     <section id="contact">
-      <div class="">
+      <div class="contact-header">
         <h1>Contact</h1>
       </div>
-      <div class="">
+      <div class="contact-sub-header container">
         <h3>Get In Touch</h3>
         <p><em>I'd love to hear from you!</em></p>
       </div>
-      <img src="" alt="Image of ...">
-      <div class="">
-        <p>Location: </p>
-        <p>Phone: </p>
-        <p>Email: </p>
-      </div>
-      <div class="">
-        <form class="" action="index.html" method="post">
-          <input type="text" name="" value="">
-          <input type="text" name="" value="">
-          <input type="text" name="" value="">
-          <button type="button" name="button">Send</button>
-        </form>
+      <div class="contact-info container">
+        <img src="images/mailbox 500w.jpg" alt="Image of mailboxes">
+        <div class="contact-text">
+          <p><i class="fas fa-map-marker-alt"></i>Location: London, UK</p>
+          <p><i class="fas fa-phone-alt"></i>Phone: 123 456 789</p>
+          <p><i class="fas fa-envelope"></i>Email: me@mail.com</p>
+          <p>Leave me a message:</p>
+          <!-- N.B. Form is set up with formspree, requires a working email action="https://formspree.io/unngha@hotmail.com" and a test contact message to activate. See https://github.com/formspree/formspree for mor details -->
+          <form id="contactform"  method="post">
+            <input type="text" name="name" placeholder="Your name">
+            <input type="text" name="_replyto" placeholder="Your email">
+            <textarea name="message" placeholder="Your message"></textarea>
+            <input type="hidden" name="_subject" value="Website contact">
+            <input type="text" name="_gotcha" style="display:none">
+            <button type="submit" name="button"><i class="fas fa-paper-plane"></i> Send</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>

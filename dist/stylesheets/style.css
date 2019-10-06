@@ -88,11 +88,12 @@ hr {
 }
 
 .container {
+  max-width: 980px;
   width: 75%;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
 }
 
-/* Testimonials Section */
+/***** Testimonials Section *****/
 #testimonials {
   background-color: #b9e6ff;
   padding-bottom: 20px;
@@ -231,7 +232,89 @@ hr {
 }
 /*! Carousel ends
 
-/* Resume page */
+/***** Contact Section *****/
+.contact-header {
+  background-image: url("../../images/contact 1100w.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 1px 1px 2px #333;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 992px) {
+  .contact-header {
+    background-image: url("../../images/contact max.jpg");
+  }
+}
+
+.contact-sub-header {
+  text-align: center;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0;
+  grid-template-areas: "contactImage" "contactText" "contactText" "contactText";
+  grid-template-rows: auto;
+}
+@media only screen and (min-width: 692px) {
+  .contact-info {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "contactImage contactText" "contactImage contactText" "contactImage contactText";
+  }
+}
+.contact-info img {
+  grid-area: contactImage;
+  width: 100%;
+}
+.contact-info .contact-text {
+  grid-area: contactText;
+  line-height: 2;
+  padding-left: 30px;
+}
+.contact-info .contact-text i {
+  color: #333;
+  padding-right: 5px;
+}
+.contact-info .contact-text input,
+.contact-info .contact-text textarea {
+  background-color: #ececec;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  outline: none;
+  margin: 5px 0;
+  padding: 5px;
+  transition: all 0.4s;
+  width: 100%;
+}
+.contact-info .contact-text input:focus,
+.contact-info .contact-text textarea:focus {
+  background-color: #fff;
+  border: 2px solid #f87575;
+}
+.contact-info .contact-text button {
+  background-color: #f87575;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  width: 100px;
+}
+.contact-info .contact-text button:hover {
+  background-color: #5c95ff;
+}
+.contact-info .contact-text button i {
+  color: #fff;
+}
+
+/***** Resume page *****/
 .experience-section .container {
   display: grid;
   grid-template-columns: 1fr;

@@ -7,8 +7,8 @@ $light-melon: #ffd5d2;
 $uranian-blue: #b9e6ff;
 $cornflower-blue: #5c95ff;
 
-@mixin parallax-header($img-src, $img-src-big) {
-  background-image: $img-src;
+@mixin parallax-header($imgSrc, $imgSrcBig) {
+  background-image: $imgSrc;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,7 +22,26 @@ $cornflower-blue: #5c95ff;
   margin-bottom: 40px;
 
   @media only screen and (min-width: 992px) {
-    background-image: $img-src-big;
+    background-image: $imgSrcBig;
+  }
+}
+
+@mixin responsive-grid(
+  $firstCol,
+  $gridGap,
+  $gridAreas1,
+  $vw,
+  $secondCol,
+  $gridAreas2
+) {
+  display: grid;
+  grid-template-columns: $firstCol;
+  grid-gap: $gridGap;
+  grid-template-areas: $gridAreas1;
+
+  @media only screen and ($vw) {
+    grid-template-columns: $secondCol;
+    grid-template-areas: $gridAreas2;
   }
 }
 
@@ -126,11 +145,12 @@ hr {
 }
 
 .container {
+  max-width: 980px;
   width: 75%;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
 }
 
-/* Testimonials Section */
+/***** Testimonials Section *****/
 
 #testimonials {
   background-color: $uranian-blue;
@@ -259,7 +279,78 @@ hr {
 
 /*! Carousel ends
 
-/* Resume page */
+/***** Contact Section *****/
+
+.contact-header {
+  @include parallax-header(
+    url("../../images/contact\ 1100w.jpg"),
+    url("../../images/contact\ max.jpg")
+  );
+}
+
+.contact-sub-header {
+  text-align: center;
+}
+
+.contact-info {
+  @include responsive-grid(
+    1fr,
+    0,
+    "contactImage" "contactText" "contactText" "contactText",
+    "min-width: 692px",
+    1fr 3fr,
+    "contactImage contactText" "contactImage contactText"
+      "contactImage contactText"
+  );
+  grid-template-rows: auto;
+
+  img {
+    grid-area: contactImage;
+    width: 100%;
+  }
+  .contact-text {
+    grid-area: contactText;
+
+    line-height: 2;
+    padding-left: 30px;
+    i {
+      color: #333;
+      padding-right: 5px;
+    }
+
+    input,
+    textarea {
+      background-color: #ececec;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      outline: none;
+      margin: 5px 0;
+      padding: 5px;
+      transition: all 0.4s;
+      width: 100%;
+      &:focus {
+        background-color: #fff;
+        border: 2px solid $light-coral;
+      }
+    }
+    button {
+      background-color: $light-coral;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 2px;
+      width: 100px;
+      &:hover {
+        background-color: $cornflower-blue;
+      }
+      i {
+        color: #fff;
+      }
+    }
+  }
+}
+
+/***** Resume page *****/
 
 .experience-section .container {
   display: grid;

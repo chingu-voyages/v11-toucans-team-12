@@ -47,3 +47,10 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+// Contact form security to avoid spambots, from: https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870
+var contactform = document.getElementById("contactform");
+contactform.setAttribute(
+  "action",
+  "//formspree.io/" + "your" + "@" + "email" + "." + "com"
+);
