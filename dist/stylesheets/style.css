@@ -382,4 +382,19 @@ hr {
   text-align: center;
 }
 
+/***** Footer *****/
+footer {
+  background-color: #7e6c6c;
+  color: #fff;
+  margin-top: 70px;
+  padding: 50px 0 30px;
+  text-align: center;
+}
+footer i {
+  margin: 10px 10px 20px;
+}
+footer p {
+  font-size: 0.8rem;
+}
+
 /*# sourceMappingURL=style.css.map */

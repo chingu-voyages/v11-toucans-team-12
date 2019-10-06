@@ -417,3 +417,19 @@ hr {
     }
   }
 }
+
+/***** Footer *****/
+
+footer {
+  background-color: $old-lavender;
+  color: #fff;
+  margin-top: 70px;
+  padding: 50px 0 30px;
+  text-align: center;
+  i {
+    margin: 10px 10px 20px;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
