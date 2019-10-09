@@ -87,7 +87,7 @@ hr {
   width: 50%;
 }
 
-.container {
+.container, .contact-info, .contact-sub-header {
   max-width: 980px;
   width: 75%;
   margin: 0 auto 30px;
@@ -106,7 +106,7 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  text-shadow: 1px 1px 2px #333;
+  text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
   height: 400px;
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@ hr {
 
 /*! Carousel starts ---- How To by W3Schools:  https://www.w3schools.com/howto/howto_js_slideshow.asp */
 .testimonial-carousel {
-  max-width: 1000px;
+  max-width: 980px;
   position: relative;
   margin: auto;
 }
@@ -149,7 +149,7 @@ hr {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: #717171;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -171,22 +171,12 @@ hr {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: #717171;
   font-size: 15px;
   padding: 3% 15%;
   bottom: 8px;
   width: 100%;
   text-align: center;
-  text-shadow: 0.5px 0.5px 1px #333;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
 }
 
 /* The dots/bullets/indicators */
@@ -240,7 +230,7 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  text-shadow: 1px 1px 2px #333;
+  text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
   height: 400px;
   display: flex;
   align-items: center;
@@ -273,6 +263,7 @@ hr {
 .contact-info img {
   grid-area: contactImage;
   width: 100%;
+  margin-bottom: 30px;
 }
 .contact-info .contact-text {
   grid-area: contactText;
@@ -280,26 +271,33 @@ hr {
   padding-left: 30px;
 }
 .contact-info .contact-text i {
-  color: #333;
+  color: #717171;
   padding-right: 5px;
 }
-.contact-info .contact-text input,
-.contact-info .contact-text textarea {
-  background-color: #ececec;
+.contact-info .contact-text form {
+  margin-top: 30px;
+}
+.contact-info .contact-text form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-info .contact-text form input,
+.contact-info .contact-text form textarea {
+  background-color: #eee;
   border: 1px solid transparent;
-  border-radius: 2px;
   outline: none;
   margin: 5px 0;
   padding: 5px;
   transition: all 0.4s;
   width: 100%;
 }
-.contact-info .contact-text input:focus,
-.contact-info .contact-text textarea:focus {
+.contact-info .contact-text form input:focus,
+.contact-info .contact-text form textarea:focus {
   background-color: #fff;
-  border: 2px solid #f87575;
+  border: 1px solid #f87575;
 }
-.contact-info .contact-text button {
+.contact-info .contact-text form button {
   background-color: #f87575;
   color: #fff;
   cursor: pointer;
@@ -307,27 +305,27 @@ hr {
   border-radius: 2px;
   width: 100px;
 }
-.contact-info .contact-text button:hover {
-  background-color: #5c95ff;
+.contact-info .contact-text form button:hover {
+  background-color: #ffa9a3;
 }
-.contact-info .contact-text button i {
+.contact-info .contact-text form button i {
   color: #fff;
 }
 
 /***** Resume page *****/
-.experience-section .container {
+.experience-section .container, .experience-section .contact-sub-header, .experience-section .contact-info {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 50px;
   grid-template-areas: "header" "skills" "work" "education";
 }
-
 @media only screen and (min-width: 768px) {
-  .experience-section .container {
+  .experience-section .container, .experience-section .contact-sub-header, .experience-section .contact-info {
     grid-template-columns: 1fr 3fr;
     grid-template-areas: "header header" "skills work" "skills education";
   }
 }
+
 .resume-header {
   background-image: url("../../images/resume 1100w.jpg");
   background-attachment: fixed;
@@ -335,7 +333,7 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  text-shadow: 1px 1px 2px #333;
+  text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
   height: 400px;
   display: flex;
   align-items: center;
@@ -355,21 +353,6 @@ hr {
 
 #education {
   grid-area: education;
-  /*   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: flex-start;
-
-  img {
-    justify-self: center;
-    align-self: flex-end;
-    width: 30%;
-    height: auto;
-  }
-
-  div {
-    width: 50%;
-  } */
 }
 
 #skills {
@@ -377,6 +360,9 @@ hr {
   line-height: 2;
 }
 #skills div div {
+  background-color: #ffd5d2;
+}
+#skills div div div {
   background-color: #f87575;
   margin-bottom: 1rem;
   text-align: center;
