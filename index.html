@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="dist/stylesheets/reset.css">
   <link rel="stylesheet" href="dist/stylesheets/style.css">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/65ac835d05.js" crossorigin="anonymous"></script>
   <title>My Portfolio</title>
 </head>
 
@@ -86,63 +89,89 @@
       </div>
     </section>
 
-    <!-- Testimonials ULLA DOES-->
+    <!-- Testimonials -->
+    <!-- Carousel How To by W3Schools:  https://www.w3schools.com/howto/howto_js_slideshow.asp-->
     <section id="testimonials">
-      <div class="">
+      <div class="testimonial-header">
         <h1>Testimonials</h1>
       </div>
 
-      <div class="">
-        <img src="" alt="">
-        <p><em>Jane Doe is the best employee we never had!</em></p>
-        <p><strong>John, Google</strong></p>
-      </div>
-      <div class="">
-        <img src="" alt="">
-        <p><em>With Jane Doe's help my company was able to bring in 50% more revenue!</em></p>
-        <p><strong>Lisa, Microsoft</strong></p>
-      </div>
-      <div class="">
-        <img src="" alt="">
-        <p><em>The most professional individual I have had the pleasure to work with.</em></p>
-        <p><strong>Jack, Facebook</strong></p>
-      </div>
+        <div class="testimonial-carousel">
+            <div class="mySlides fade">
+              <img class="testimonial-img" src="images/testimonial_1 1100w.jpg" alt="Image of testifier #1">
+              <div class="text">
+                  <h2>Jane Doe is the best employee we never had!</h2>
+                  <p><strong>John, Google</strong></p>
+              </div>        
+            </div>
+            <div class="mySlides fade">
+              <img class="testimonial-img" src="images/testimonial_2 1100w.jpg" alt="Image of testifier #2">
+              <div class="text">
+                  <h2>With Jane Doe's help my company was able to bring in 50% more revenue!</h2>
+                  <p><strong>Lisa, Microsoft</strong></p>
+              </div>
+            </div>
+            <div class="mySlides fade">
+              <img class="testimonial-img" src="images/testimonial_3 1100w.jpg" alt="Image of testifier #3">
+              <div class="text">
+                  <h2>The most professional individual I have had the pleasure to work with.</h2>
+                  <p><strong>Jack, Facebook</strong></p>
+              </div>
+            </div>
+            <a class="prev" onclick="plusSides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
     </section>
 
-    <!-- Contact ULLA DOES-->
+    <!-- Contact -->
     <section id="contact">
-      <div class="">
+      <div class="contact-header">
         <h1>Contact</h1>
       </div>
-      <div class="">
+      <div class="contact-sub-header">
         <h3>Get In Touch</h3>
         <p><em>I'd love to hear from you!</em></p>
       </div>
-      <img src="" alt="Image of ...">
-      <div class="">
-        <p>Location: </p>
-        <p>Phone: </p>
-        <p>Email: </p>
-      </div>
-      <div class="">
-        <form class="" action="index.html" method="post">
-          <input type="text" name="" value="">
-          <input type="text" name="" value="">
-          <input type="text" name="" value="">
-          <button type="button" name="button">Send</button>
-        </form>
+      <div class="contact-info">
+        <img src="images/mailbox 500w.jpg" alt="Image of mailboxes">
+        <div class="contact-text">
+          <p><i class="fas fa-map-marker-alt"></i>Location: London, UK</p>
+          <p><i class="fas fa-phone-alt"></i>Phone: 123 456 789</p>
+          <p><i class="fas fa-envelope"></i>Email: me@mail.com</p>
+          <!-- N.B. Form is set up with formspree, requires a working email action="https://formspree.io/unngha@hotmail.com" and a test contact message to activate. See https://github.com/formspree/formspree for mor details -->
+          <form id="contactform"  method="post">
+            <fieldset>
+              <legend>Leave me a message!</legend>
+              <label for="name">Your name:</label><br>
+              <input type="text" name="name" placeholder="e.g. John Doe" required>
+              <label for="_replyto">Your email:</label><br>
+              <input type="text" name="_replyto" placeholder="e.g. john@mail.com">
+              <label for="message">Your message:</label><br>
+              <textarea name="message" required></textarea>
+              <input type="hidden" name="_subject" value="Website contact">
+              <input type="text" name="_gotcha" style="display:none">
+              <button type="submit" name="button"><i class="fas fa-paper-plane"></i> Send</button>
+            </fieldset>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer ULLA DOES-->
+  <!-- Footer -->
   <footer>
     <div class="some">
-      <a href="#">LinkedIn</a>
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-      <a href="#">Instagram</a>
-      <a href="#">GitHub</a>
+      <a href=""><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href=""><i class="fab fa-facebook-square fa-2x"></i></a>
+      <a href=""><i class="fab fa-twitter-square fa-2x"></i></a>
+      <a href=""><i class="fab fa-instagram fa-2x"></i></a>
+      <a href=""><i class="fab fa-github-square fa-2x"></i></a>
     </div>
     <div class="copyright">
       <p>Copyright 2019 Jane Doe</p>

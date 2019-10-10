@@ -6,20 +6,44 @@ $melon: #ffa9a3;
 $light-melon: #ffd5d2;
 $uranian-blue: #b9e6ff;
 $cornflower-blue: #5c95ff;
+$dim-gray: #717171;
 
-@mixin parallax-header($img-src) {
-  background-image: $img-src;
+@mixin parallax-header($imgSrc, $imgSrcBig) {
+  background-image: $imgSrc;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  text-shadow: 1px 1px 2px #333;
+  text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+
+  @media only screen and (min-width: 992px) {
+    background-image: $imgSrcBig;
+  }
+}
+
+@mixin responsive-grid(
+  $firstCol,
+  $gridGap,
+  $gridAreas1,
+  $vw,
+  $secondCol,
+  $gridAreas2
+) {
+  display: grid;
+  grid-template-columns: $firstCol;
+  grid-gap: $gridGap;
+  grid-template-areas: $gridAreas1;
+
+  @media only screen and ($vw) {
+    grid-template-columns: $secondCol;
+    grid-template-areas: $gridAreas2;
+  }
 }
 
 html {
@@ -27,7 +51,7 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 // Navbar
@@ -43,6 +67,7 @@ nav {
   padding: 20px;
   background: $melon;
   transition: 300ms;
+  z-index: 10;
 
   #brand {
     text-transform: uppercase;
@@ -121,22 +146,230 @@ hr {
 }
 
 .container {
+  max-width: 980px;
   width: 75%;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
 }
 
-.experience-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+/***** Testimonials Section *****/
+
+#testimonials {
+  background-color: $uranian-blue;
+  padding-bottom: 20px;
+}
+
+.testimonial-header {
+  @include parallax-header(
+    url("../../images/testimonials\ 1100w.jpg"),
+    url("../../images/testimonials max.jpg")
+  );
+}
+
+/*! Carousel starts ---- How To by W3Schools:  https://www.w3schools.com/howto/howto_js_slideshow.asp */
+.testimonial-carousel {
+  max-width: 980px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.testimonial-img {
+  border-radius: 100%;
+  height: auto;
+  width: 25%;
+  display: block;
+  margin: 20px auto auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: $dim-gray;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: $dim-gray;
+  font-size: 15px;
+  padding: 3% 15%;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  // text-shadow: 0.5px 0.5px 1px #333;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: $dim-gray;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*! Carousel ends
+
+/***** Contact Section *****/
+
+.contact-header {
+  @include parallax-header(
+    url("../../images/contact\ 1100w.jpg"),
+    url("../../images/contact\ max.jpg")
+  );
+}
+
+.contact-sub-header {
+  @extend .container;
+  text-align: center;
+}
+
+.contact-info {
+  @extend .container;
+  @include responsive-grid(
+    1fr,
+    0,
+    "contactImage" "contactText" "contactText" "contactText",
+    "min-width: 692px",
+    1fr 3fr,
+    "contactImage contactText" "contactImage contactText"
+      "contactImage contactText"
+  );
   grid-template-rows: auto;
-  grid-template-areas:
-    "header header header header"
-    "work work work skills"
-    "education education education skills";
+
+  img {
+    grid-area: contactImage;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .contact-text {
+    grid-area: contactText;
+    line-height: 2;
+    padding-left: 30px;
+    i {
+      color: $dim-gray;
+      padding-right: 5px;
+    }
+    form {
+      margin-top: 30px;
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+      input,
+      textarea {
+        background-color: #eee;
+        border: 1px solid transparent;
+        // border-radius: 2px;
+        outline: none;
+        margin: 5px 0;
+        padding: 5px;
+        transition: all 0.4s;
+        width: 100%;
+        &:focus {
+          background-color: #fff;
+          border: 1px solid $light-coral;
+        }
+      }
+      button {
+        background-color: $light-coral;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        border-radius: 2px;
+        width: 100px;
+        &:hover {
+          background-color: $melon;
+        }
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+/***** Resume page *****/
+
+.experience-section .container {
+  @include responsive-grid(
+    1fr,
+    50px,
+    "header" "skills" "work" "education",
+    "min-width: 768px",
+    1fr 3fr,
+    "header header" "skills work" "skills education"
+  );
 }
 
 .resume-header {
-  @include parallax-header(url("/images/resume.png"));
+  @include parallax-header(
+    url("../../images/resume 1100w.jpg"),
+    url("../../images/resume max.jpg")
+  );
   grid-area: header;
 }
 
@@ -146,34 +379,35 @@ hr {
 
 #education {
   grid-area: education;
-
-  // Include if image added
-  /*   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: flex-start;
-
-  img {
-    justify-self: center;
-    align-self: flex-end;
-    width: 30%;
-    height: auto;
-  }
-
-  div {
-    width: 50%;
-  } */
 }
 
 #skills {
   grid-area: skills;
   line-height: 2;
-  width: 90%;
-
   div {
     div {
-      background-color: $light-coral;
-      margin-bottom: 1rem;
+      background-color: $light-melon;
+      div {
+        background-color: $light-coral;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
     }
+  }
+}
+
+/***** Footer *****/
+
+footer {
+  background-color: $old-lavender;
+  color: #fff;
+  margin-top: 70px;
+  padding: 50px 0 30px;
+  text-align: center;
+  i {
+    margin: 10px 10px 20px;
+  }
+  p {
+    font-size: 0.8rem;
   }
 }
