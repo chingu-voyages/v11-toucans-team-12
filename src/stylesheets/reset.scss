@@ -12,6 +12,29 @@ ul, ol, li, p, hr {
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  padding: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+h5,
+h6 {
+  margin: 1rem 0;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+hr {
+  border: 0.5px solid #eee;
+  margin: 20px auto;
+  width: 50%;
+}
+
 ul {
   list-style: none;
   color: #333;

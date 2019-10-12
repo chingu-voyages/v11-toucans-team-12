@@ -1,103 +1,153 @@
 html {
-  scroll-behavior: smooth;
-}
+  scroll-behavior: smooth; }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
 
 nav {
-  position: fixed;
-  top: -100px;
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  opacity: 0;
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background: #ffa9a3;
+  justify-content: flex-end;
+  padding: 20px 20px;
   transition: 300ms;
-  z-index: 10;
-}
-nav #brand {
-  text-transform: uppercase;
-  font-size: 2em;
-  letter-spacing: 2px;
-}
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 1.2em;
-}
-nav ul li {
-  position: relative;
-  margin: 0 3px;
-}
-nav ul li a {
-  display: inline-block;
-  padding: 5px 8px;
-}
-nav ul li::before {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  opacity: 0;
-  background: #7e6c6c;
-  transition: 300ms;
-}
-nav ul li:hover::before {
-  opacity: 1;
-  bottom: 0;
-}
-nav ul #resume-link {
-  background: #ffd5d2;
-  position: relative;
-  transition: 300ms;
-}
-nav ul #resume-link:hover {
-  background: #7e6c6c;
-  color: white;
-}
+  z-index: 10; }
+  nav #brand {
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400; }
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2em; }
+    nav ul li {
+      position: relative;
+      margin: 0 3px; }
+      nav ul li a {
+        display: inline-block;
+        padding: 5px 8px; }
+    nav ul li::before {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      opacity: 0;
+      background: #7e6c6c;
+      transition: 300ms; }
+    nav ul li:hover::before {
+      opacity: 1;
+      bottom: 0; }
+    nav ul #resume-link {
+      background: #ffd5d2;
+      position: relative;
+      transition: 300ms; }
+    nav ul #resume-link:hover {
+      background: #7e6c6c;
+      color: white; }
 
 nav.shown {
   top: 0;
-  opacity: 1;
-}
+  opacity: 1; }
 
-h1,
-h2,
-h3,
-h4 {
-  padding: 1rem 0 0.5rem;
-  text-align: center;
-}
+#main-header {
+  height: 60vh;
+  background: url("../../images/header-background.jpg") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #main-header h1 {
+    font-size: 4em;
+    text-transform: uppercase; }
 
-h5,
-h6 {
-  margin: 1rem 0;
-}
-
-hr {
-  border: 0.5px solid #eee;
-  margin: 20px auto;
-  width: 50%;
-}
-
-.container, .contact-info, .contact-sub-header {
+.container, .contact-sub-header, .contact-info {
   max-width: 980px;
   width: 75%;
-  margin: 0 auto 30px;
-}
+  margin: 0 auto 30px; }
+
+/* About */
+#about {
+  background-color: whitesmoke;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #dadada; }
+  #about h3 {
+    margin-bottom: 4rem;
+    font-size: 2em; }
+  #about .container, #about .contact-sub-header, #about .contact-info {
+    display: flex;
+    padding: 4rem;
+    background: white;
+    box-shadow: 0 0 15px 0 #dfdfdf; }
+    @media (max-width: 1000px) {
+      #about .container, #about .contact-sub-header, #about .contact-info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem; } }
+    #about .container img, #about .contact-sub-header img, #about .contact-info img {
+      margin-left: -100px;
+      height: 300px;
+      width: 300px;
+      box-shadow: 15px 15px #ffa9a3; }
+      @media (max-width: 1000px) {
+        #about .container img, #about .contact-sub-header img, #about .contact-info img {
+          margin-left: 0;
+          margin-bottom: 2rem;
+          box-shadow: 10px -10px #ffa9a3; } }
+    #about .container p, #about .contact-sub-header p, #about .contact-info p {
+      margin-left: 80px;
+      line-height: 1.8; }
+      @media (max-width: 1000px) {
+        #about .container p, #about .contact-sub-header p, #about .contact-info p {
+          margin-left: 0; } }
+
+/* Portfolio */
+#portfolio {
+  padding: 4rem; }
+  #portfolio h4 {
+    margin-bottom: 2rem; }
+  #portfolio .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    gap: 20px;
+    justify-content: center; }
+    #portfolio .projects-grid .project-card {
+      position: relative;
+      cursor: pointer;
+      transition: 200ms ease-in-out; }
+    #portfolio .projects-grid .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 300ms 100ms ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem; }
+      #portfolio .projects-grid .overlay h5 {
+        margin-top: 20px;
+        transition: 300ms 100ms ease-in-out; }
+    #portfolio .projects-grid .project-card:hover {
+      transform: scale(1.02); }
+    #portfolio .projects-grid .project-card:hover h5 {
+      margin-top: 0; }
+    #portfolio .projects-grid .project-card:hover > .overlay {
+      opacity: 1; }
 
 /***** Testimonials Section *****/
 #testimonials {
   background-color: #b9e6ff;
-  padding-bottom: 20px;
-}
+  padding-bottom: 20px; }
 
 .testimonial-header {
   background-image: url("../../images/testimonials 1100w.jpg");
@@ -107,38 +157,31 @@ hr {
   background-size: cover;
   color: #fff;
   text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
-}
-@media only screen and (min-width: 992px) {
-  .testimonial-header {
-    background-image: url("../../images/testimonials max.jpg");
-  }
-}
+  margin-bottom: 40px; }
+  @media only screen and (min-width: 992px) {
+    .testimonial-header {
+      background-image: url("../../images/testimonials max.jpg"); } }
 
-/*! Carousel starts ---- How To by W3Schools:  https://www.w3schools.com/howto/howto_js_slideshow.asp */
 .testimonial-carousel {
   max-width: 980px;
   position: relative;
-  margin: auto;
-}
+  margin: auto; }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
-  text-align: center;
-}
+  text-align: center; }
 
 .testimonial-img {
   border-radius: 100%;
   height: auto;
   width: 25%;
   display: block;
-  margin: 20px auto auto;
-}
+  margin: 20px auto auto; }
 
 /* Next & previous buttons */
 .prev,
@@ -154,20 +197,17 @@ hr {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
-}
+  user-select: none; }
 
 /* Position the "next button" to the right */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
-}
+  border-radius: 3px 0 0 3px; }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
+  background-color: rgba(0, 0, 0, 0.8); }
 
 /* Caption text */
 .text {
@@ -176,8 +216,7 @@ hr {
   padding: 3% 15%;
   bottom: 8px;
   width: 100%;
-  text-align: center;
-}
+  text-align: center; }
 
 /* The dots/bullets/indicators */
 .dot {
@@ -188,38 +227,29 @@ hr {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
-}
+  transition: background-color 0.6s ease; }
 
 .active,
 .dot:hover {
-  background-color: #717171;
-}
+  background-color: #717171; }
 
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
-  animation-duration: 1.5s;
-}
+  animation-duration: 1.5s; }
 
 @-webkit-keyframes fade {
   from {
-    opacity: 0.4;
-  }
+    opacity: 0.4; }
   to {
-    opacity: 1;
-  }
-}
+    opacity: 1; } }
 @keyframes fade {
   from {
-    opacity: 0.4;
-  }
+    opacity: 0.4; }
   to {
-    opacity: 1;
-  }
-}
+    opacity: 1; } }
 /*! Carousel ends
 
 /***** Contact Section *****/
@@ -231,100 +261,80 @@ hr {
   background-size: cover;
   color: #fff;
   text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
-}
-@media only screen and (min-width: 992px) {
-  .contact-header {
-    background-image: url("../../images/contact max.jpg");
-  }
-}
+  margin-bottom: 40px; }
+  @media only screen and (min-width: 992px) {
+    .contact-header {
+      background-image: url("../../images/contact max.jpg"); } }
 
 .contact-sub-header {
-  text-align: center;
-}
+  text-align: center; }
 
 .contact-info {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0;
   grid-template-areas: "contactImage" "contactText" "contactText" "contactText";
-  grid-template-rows: auto;
-}
-@media only screen and (min-width: 692px) {
-  .contact-info {
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: "contactImage contactText" "contactImage contactText" "contactImage contactText";
-  }
-}
-.contact-info img {
-  grid-area: contactImage;
-  width: 100%;
-  margin-bottom: 30px;
-}
-.contact-info .contact-text {
-  grid-area: contactText;
-  line-height: 2;
-  padding-left: 30px;
-}
-.contact-info .contact-text i {
-  color: #717171;
-  padding-right: 5px;
-}
-.contact-info .contact-text form {
-  margin-top: 30px;
-}
-.contact-info .contact-text form fieldset {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-.contact-info .contact-text form input,
-.contact-info .contact-text form textarea {
-  background-color: #eee;
-  border: 1px solid transparent;
-  outline: none;
-  margin: 5px 0;
-  padding: 5px;
-  transition: all 0.4s;
-  width: 100%;
-}
-.contact-info .contact-text form input:focus,
-.contact-info .contact-text form textarea:focus {
-  background-color: #fff;
-  border: 1px solid #f87575;
-}
-.contact-info .contact-text form button {
-  background-color: #f87575;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-  border-radius: 2px;
-  width: 100px;
-}
-.contact-info .contact-text form button:hover {
-  background-color: #ffa9a3;
-}
-.contact-info .contact-text form button i {
-  color: #fff;
-}
+  grid-template-rows: auto; }
+  @media only screen and (min-width: 692px) {
+    .contact-info {
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: "contactImage contactText" "contactImage contactText" "contactImage contactText"; } }
+  .contact-info img {
+    grid-area: contactImage;
+    width: 100%;
+    margin-bottom: 30px; }
+  .contact-info .contact-text {
+    grid-area: contactText;
+    line-height: 2;
+    padding-left: 30px; }
+    .contact-info .contact-text i {
+      color: #717171;
+      padding-right: 5px; }
+    .contact-info .contact-text form {
+      margin-top: 30px; }
+      .contact-info .contact-text form fieldset {
+        border: none;
+        margin: 0;
+        padding: 0; }
+      .contact-info .contact-text form input,
+      .contact-info .contact-text form textarea {
+        background-color: #eee;
+        border: 1px solid transparent;
+        outline: none;
+        margin: 5px 0;
+        padding: 5px;
+        transition: all 0.4s;
+        width: 100%; }
+        .contact-info .contact-text form input:focus,
+        .contact-info .contact-text form textarea:focus {
+          background-color: #fff;
+          border: 1px solid #f87575; }
+      .contact-info .contact-text form button {
+        background-color: #f87575;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        border-radius: 2px;
+        width: 100px; }
+        .contact-info .contact-text form button:hover {
+          background-color: #ffa9a3; }
+        .contact-info .contact-text form button i {
+          color: #fff; }
 
 /***** Resume page *****/
 .experience-section .container, .experience-section .contact-sub-header, .experience-section .contact-info {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 50px;
-  grid-template-areas: "header" "skills" "work" "education";
-}
-@media only screen and (min-width: 768px) {
-  .experience-section .container, .experience-section .contact-sub-header, .experience-section .contact-info {
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: "header header" "skills work" "skills education";
-  }
-}
+  grid-template-areas: "header" "skills" "work" "education"; }
+  @media only screen and (min-width: 768px) {
+    .experience-section .container, .experience-section .contact-sub-header, .experience-section .contact-info {
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas: "header header" "skills work" "skills education"; } }
 
 .resume-header {
   background-image: url("../../images/resume 1100w.jpg");
@@ -334,39 +344,31 @@ hr {
   background-size: cover;
   color: #fff;
   text-shadow: 2px 2px 2px #333, -2px -2px 2px #333;
-  height: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
-  grid-area: header;
-}
-@media only screen and (min-width: 992px) {
-  .resume-header {
-    background-image: url("../../images/resume max.jpg");
-  }
-}
+  grid-area: header; }
+  @media only screen and (min-width: 992px) {
+    .resume-header {
+      background-image: url("../../images/resume max.jpg"); } }
 
 #work {
-  grid-area: work;
-}
+  grid-area: work; }
 
 #education {
-  grid-area: education;
-}
+  grid-area: education; }
 
 #skills {
   grid-area: skills;
-  line-height: 2;
-}
-#skills div div {
-  background-color: #ffd5d2;
-}
-#skills div div div {
-  background-color: #f87575;
-  margin-bottom: 1rem;
-  text-align: center;
-}
+  line-height: 2; }
+  #skills div div {
+    background-color: #ffd5d2; }
+    #skills div div div {
+      background-color: #f87575;
+      margin-bottom: 1rem;
+      text-align: center; }
 
 /***** Footer *****/
 footer {
@@ -374,13 +376,10 @@ footer {
   color: #fff;
   margin-top: 70px;
   padding: 50px 0 30px;
-  text-align: center;
-}
-footer i {
-  margin: 10px 10px 20px;
-}
-footer p {
-  font-size: 0.8rem;
-}
+  text-align: center; }
+  footer i {
+    margin: 10px 10px 20px; }
+  footer p {
+    font-size: 0.8rem; }
 
 /*# sourceMappingURL=style.css.map */
