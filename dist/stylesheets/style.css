@@ -2,7 +2,8 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c2c2c; }
 
 nav {
   position: absolute;
@@ -12,14 +13,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   padding: 20px 20px;
-  transition: 300ms;
-  z-index: 10; }
-  nav #brand {
-    text-transform: uppercase;
-    font-size: 2em;
-    letter-spacing: 2px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400; }
+  transition: 300ms; }
   nav ul {
     display: flex;
     justify-content: space-evenly;
@@ -63,8 +57,12 @@ nav.shown {
   justify-content: center;
   align-items: center; }
   #main-header h1 {
-    font-size: 4em;
-    text-transform: uppercase; }
+    font-size: 8vmax;
+    letter-spacing: 10px;
+    font-family: 'Pacifico', cursive; }
+  #main-header h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal; }
 
 .container, .contact-sub-header, .contact-info {
   max-width: 980px;
@@ -111,12 +109,15 @@ nav.shown {
 #portfolio {
   padding: 4rem; }
   #portfolio h4 {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    font-weight: normal; }
   #portfolio .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
     gap: 20px;
-    justify-content: center; }
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto; }
     #portfolio .projects-grid .project-card {
       position: relative;
       cursor: pointer;
@@ -377,8 +378,12 @@ footer {
   margin-top: 70px;
   padding: 50px 0 30px;
   text-align: center; }
-  footer i {
-    margin: 10px 10px 20px; }
+  footer .some a {
+    display: inline-block;
+    margin: 10px 5px;
+    transition: 200ms; }
+  footer .some a:hover {
+    transform: scale(1.1); }
   footer p {
     font-size: 0.8rem; }
 

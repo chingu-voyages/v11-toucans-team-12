@@ -1,20 +1,3 @@
-// Navbar Behaviour
-
-// window.addEventListener("scroll", toggleNavbar);
-
-// function toggleNavbar() {
-//   const navbar = document.querySelector("nav");
-
-//   console.log(this.scrollY);
-
-//   if (this.scrollY > 100) {
-//     navbar.className = "shown";
-//   } else {
-//     navbar.className = "";
-//   }
-// }
-
-/* Carousel How To by W3Schools:  https://www.w3schools.com/howto/howto_js_slideshow.asp */
 var slideIndex = 1;
 showSlides(slideIndex);
 

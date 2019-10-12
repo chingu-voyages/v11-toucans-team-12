@@ -52,6 +52,7 @@ html {
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(44, 44, 44);
 }
 
 // Navbar
@@ -65,15 +66,6 @@ nav {
   justify-content: flex-end;
   padding: 20px 20px;
   transition: 300ms;
-  z-index: 10;
-
-  #brand {
-    text-transform: uppercase;
-    font-size: 2em;
-    letter-spacing: 2px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-  }
 
   ul {
     display: flex;
@@ -134,12 +126,14 @@ nav.shown {
   align-items: center;
 
   h1 {
-    font-size: 4em;
-    text-transform: uppercase;
+    font-size: 8vmax;
+    letter-spacing: 10px;
+    font-family: 'Pacifico', cursive;
   }
 
   h2 {
-    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
   }
 }
 
@@ -205,6 +199,7 @@ nav.shown {
 
   h4 {
     margin-bottom: 2rem;
+    font-weight: normal;
   }
 
   .projects-grid {
@@ -212,13 +207,14 @@ nav.shown {
     grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
     gap: 20px;
     justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
 
     .project-card {
       position: relative;
       cursor: pointer;
       transition: 200ms ease-in-out;
     }
-
 
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
@@ -508,9 +504,17 @@ footer {
   margin-top: 70px;
   padding: 50px 0 30px;
   text-align: center;
-  i {
-    margin: 10px 10px 20px;
+
+  .some a {
+    display: inline-block;
+    margin: 10px 5px;
+    transition: 200ms;
   }
+
+  .some a:hover {
+    transform: scale(1.1);
+  }
+
   p {
     font-size: 0.8rem;
   }
